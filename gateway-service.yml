@@ -35,3 +35,7 @@ info:
     name: gateway-service
     description: API Gateway for routing and securing microservices requests
     version: 1.0.0
+
+eureka:
+  instance:
+    hostname: localhost
