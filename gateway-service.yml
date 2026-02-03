@@ -11,11 +11,11 @@ spring:
     - id: user-service
       uri: lb://user-service
       predicates:
-       - Path=/users
+       - Path=/users/**
     - id: auth-service
       uri: lb://auth-service
       predicates:
-       - Path=/auth
+       - Path=/auth/**
 
 server:
  port: 8083
