@@ -20,6 +20,15 @@ spring:
 server:
   port: 8083
 
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    urls:
+      - name: user-service
+        url: /users/v3/api-docs
+      - name: auth-service
+        url: /auth/v3/api-docs
+
 management:
   endpoints:
     web:
