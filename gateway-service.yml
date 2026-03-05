@@ -16,19 +16,7 @@ spring:
           uri: lb://auth-service
           predicates:
             - Path=/auth/**
-        - id: user-service-swagger
-          uri: lb://user-service
-          predicates:
-            - Path=/users/v3/api-docs
-          filters:
-            - StripPrefix=1
-        - id: auth-service-swagger
-          uri: lb://auth-service
-          predicates:
-            - Path=/auth/v3/api-docs
-          filters:
-            - StripPrefix=1
-
+        
 server:
   port: 8083
 
