@@ -11,15 +11,11 @@ spring:
         - id: user-service
           uri: lb://user-service
           predicates:
-            - Path=/users/users/**
-          filters:
-            - StripPrefix=1
+            - Path=/users/**
         - id: auth-service
           uri: lb://auth-service
           predicates:
-            - Path=/auth/auth/**
-          filters:
-            - StripPrefix=1
+            - Path=/auth/**
 
 server:
   port: 8083
