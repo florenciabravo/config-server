@@ -6,56 +6,28 @@ spring:
       discovery:
         serviceId: config-server
         enabled: true
-#    gateway:
-#      routes:
-#        - id: user-service
-#          uri: lb://user-service
-#          predicates:
-#            - Path=/users/**
-#        - id: auth-service
-#          uri: lb://auth-service
-#          predicates:
-#            - Path=/auth/**
-
-#spring:
-#  cloud:
     gateway:
       routes:
         - id: user-service
-          uri: lb://USER-SERVICE
+          uri: lb://user-service
           predicates:
-            - Path=/user-service/**
-          filters:
-            - StripPrefix=1
-
+            - Path=/users/**
         - id: auth-service
-          uri: lb://AUTH-SERVICE
+          uri: lb://auth-service
           predicates:
-            - Path=/auth-service/**
-          filters:
-            - StripPrefix=1
-            
+            - Path=/auth/**
+
 server:
   port: 8083
-
-#springdoc:
-#  swagger-ui:
-#    path: /swagger-ui.html
-#    urls:
-#      - name: user-service
-#        url: /users/v3/api-docs
-#      - name: auth-service
-#        url: /auth/v3/api-docs
 
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
-    use-root-path: true
     urls:
       - name: user-service
-        url: /user-service/v3/api-docs
+        url: /users/v3/api-docs
       - name: auth-service
-        url: /auth-service/v3/api-docs
+        url: /auth/v3/api-docs
         
 management:
   endpoints:
